@@ -3,7 +3,7 @@ package ec.tec.ac.cr.juan_jop96.tarea6_firebase;
 import java.util.UUID;
 
 public class Producto {
-    private String ID;
+    private String id;
     private String nombre;
     private String precio;
     private String foto;
@@ -13,7 +13,7 @@ public class Producto {
     }
 
     public Producto(String nombre, String precio, String foto, String description) {
-        ID = UUID.randomUUID().toString();
+        id = UUID.randomUUID().toString();
         this.nombre = nombre;
         this.precio = precio;
         this.foto = foto;
@@ -21,7 +21,7 @@ public class Producto {
     }
 
     public Producto(String ID, String nombre, String precio, String foto, String description) {
-        this.ID = ID;
+        this.id = ID;
         this.nombre = nombre;
         this.precio = precio;
         this.foto = foto;
@@ -29,7 +29,7 @@ public class Producto {
     }
 
     public String getID() {
-        return ID;
+        return id;
     }
 
     public String getNombre() {

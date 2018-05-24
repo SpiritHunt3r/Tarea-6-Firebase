@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,8 +47,41 @@ public class ProfileActivity extends AppCompatActivity {
         rootReference = FirebaseDatabase.getInstance().getReference();
         lista = findViewById(R.id.LV_producto);
 
+
+        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, final long id) {
+                final String idI = ArrayItem.get(position).getID();
+                new AlertDialog.Builder(ProfileActivity.this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Eliminando "+ ArrayItem.get(position).getNombre())
+                        .setMessage("Desea eliminarlo?")
+                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(getApplicationContext(),"Objeto "+ ArrayItem.get(position).getNombre() +" Eliminado",Toast.LENGTH_SHORT).show();
+                                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child(idI);
+                                myRef.removeValue();
+                                refresh();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
+                return false;
+
+            }
+
+        });
+
+
+
         cargarLista(this);
 
+    }
+
+    public void refresh(){
+        Intent i = new Intent(this,ProfileActivity.class);
+        startActivity(i);
     }
 
     public void cargarLista(final Context context){

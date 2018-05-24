@@ -115,7 +115,6 @@ public class ProductoActivity extends AppCompatActivity {
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
                             ImgDir = storageReference.child(dir).getPath().substring(11,storageReference.child(dir).getPath().length());
-                            Log.d("FOTO",ImgDir);
                             Producto newProduct = new Producto(d1.getText().toString(),d2.getText().toString(),ImgDir,d3.getText().toString());
                             rootRefence.child(newProduct.getID()).setValue(newProduct)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {

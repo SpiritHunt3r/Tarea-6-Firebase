@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "423341030566",
+    "firebase_url": "https://tarea-6-firebase.firebaseio.com",
+    "project_id": "tarea-6-firebase",
+    "storage_bucket": "tarea-6-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423341030566:android:54a370fb08b984e4",
+        "android_client_info": {
+          "package_name": "ec.tec.ac.cr.juan_jop96.tarea6_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423341030566-0tfhpn70jalgse6n1fq9njjr3chbjdlc.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "423341030566-0tfhpn70jalgse6n1fq9njjr3chbjdlc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkTwCySjhq4QYFd03T4Zqonj4e3P5MHAM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

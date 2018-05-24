@@ -34,7 +34,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     private ListView lista;
     public ArrayList<Producto> ArrayItem = new ArrayList<>();
-    producto_adapter adapter;
 
 
     @Override
@@ -47,6 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
         rootReference = FirebaseDatabase.getInstance().getReference();
         lista = findViewById(R.id.LV_producto);
 
+        cargarLista(this);
 
     }
 
@@ -72,8 +72,6 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     }
-
-
 
 
 

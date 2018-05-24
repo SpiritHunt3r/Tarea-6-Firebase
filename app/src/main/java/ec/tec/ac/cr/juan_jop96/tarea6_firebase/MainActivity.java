@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         e2 = findViewById(R.id.passwordText);
         auth = FirebaseAuth.getInstance();
 
-
-
     }
 
 

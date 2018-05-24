@@ -43,18 +43,18 @@ public class producto_adapter extends BaseAdapter {
     public View getView(int i, View convertView, ViewGroup parent) {
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View vistaItem = layoutInflater.inflate(R.layout.lista_producto, parent, false);
-        //ImageView iv_imagen = (ImageView) vistaItem.findViewById(R.id.ls_imagen);
+        ImageView iv_imagen = vistaItem.findViewById(R.id.ls_imagen);
         TextView nombre = (TextView) vistaItem.findViewById(R.id.tx_nombre);
         TextView precio = (TextView) vistaItem.findViewById(R.id.tx_precio);
-        /*ImageDownloadTask downloadTask = new ImageDownloadTask();
+        ImageDownloadTask downloadTask = new ImageDownloadTask();
         try {
-            Bitmap result = downloadTask.execute(arrayItems.get(i).getFoto()).get();
+            Bitmap result = downloadTask.execute("https://firebasestorage.googleapis.com/v0/b/tarea-6-firebase.appspot.com/o/productos%2F"+arrayItems.get(i).getFoto()+"?alt=media").get();
             iv_imagen.setImageBitmap(result);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
-        }*/
+        }
         nombre.setText("Nombre: "+arrayItems.get(i).getNombre());
         precio.setText("Precio: "+arrayItems.get(i).getPrecio());
         return vistaItem;

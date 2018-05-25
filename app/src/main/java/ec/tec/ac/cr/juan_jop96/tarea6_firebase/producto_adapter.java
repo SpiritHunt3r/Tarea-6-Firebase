@@ -46,6 +46,7 @@ public class producto_adapter extends BaseAdapter {
         ImageView iv_imagen = vistaItem.findViewById(R.id.ls_imagen);
         TextView nombre = (TextView) vistaItem.findViewById(R.id.tx_nombre);
         TextView precio = (TextView) vistaItem.findViewById(R.id.tx_precio);
+        TextView desc = (TextView) vistaItem.findViewById(R.id.tx_desc);
         ImageDownloadTask downloadTask = new ImageDownloadTask();
         try {
             Bitmap result = downloadTask.execute("https://firebasestorage.googleapis.com/v0/b/tarea-6-firebase.appspot.com/o/productos%2F"+arrayItems.get(i).getFoto()+"?alt=media").get();
@@ -56,7 +57,8 @@ public class producto_adapter extends BaseAdapter {
             e.printStackTrace();
         }
         nombre.setText("Nombre: "+arrayItems.get(i).getNombre());
-        precio.setText("Precio: "+arrayItems.get(i).getPrecio());
+        precio.setText("Precio: ₡"+arrayItems.get(i).getPrecio());
+        desc.setText("Descripcion: "+arrayItems.get(i).getDescription());
         return vistaItem;
     }
 
